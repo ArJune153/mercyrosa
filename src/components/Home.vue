@@ -108,6 +108,13 @@
     </div>
   </div>
 
+   <div class="rank-payment">
+        <span class="text3">🥰 รีวิวลูกค้า</span>
+    </div> 
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+      <div class="rw-container" id="rw-container"></div>
+    </div>
+ 
   <div class="slider-container">
     <div class="slider" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
       <div v-for="(slide, index) in slides" :key="index" class="slide">
@@ -146,13 +153,32 @@ export default {
         { src: 'certi.jpg', alt: 'Image 3' }
       ],
       topUsersData : [
-      { userName: "rosaa01xx", amount: "150,000", timestamp: "31/08/2023" },
-      { userName: "rosab89xx", amount: "130,500", timestamp: "31/08/2023" },
-      { userName: "rosae11xx", amount: "95,200", timestamp: "31/08/2023" },
-      { userName: "rosad04xx", amount: "83,000", timestamp: "31/08/2023" },
-      { userName: "rosae87xx", amount: "82,000", timestamp: "31/08/2023" },
-      { userName: "rosae35xx", amount: "78,000", timestamp: "31/08/2023" },
-    ]
+      { userName: "rosaa01xx", amount: "150,000", timestamp: "31 ส.ค. 2568" },
+      { userName: "rosab89xx", amount: "130,500", timestamp: "31 ส.ค. 2568" },
+      { userName: "rosae11xx", amount: "95,200", timestamp: "31 ส.ค. 2568" },
+      { userName: "rosad04xx", amount: "83,000", timestamp: "31 ส.ค. 2568" },
+      { userName: "rosae87xx", amount: "82,000", timestamp: "31 ส.ค. 2568" },
+      { userName: "rosae35xx", amount: "78,000", timestamp: "31 ส.ค. 2568" },
+    ],
+    reviews : [
+      { user: "rosaj23xx", text: "เว็บนี้ใช้งานง่าย ถอนเงินไวมาก", img: "photo-2568-06-02-13-24-49.jpg" },
+      { user: "rosas16xx", text: "แตกหนักจนแฟนงง ว่าไปเอาเงินมาจากไหน", img: "photo-2568-06-21-13-38-31.jpg" },
+      { user: "rosae56xx", text: "ระบบดี ไม่มีสะดุดเลย", img: "photo-2568-06-02-13-11-47.jpg" },
+      { user: "rosax88xx", text: "โปรโมชั่นคุ้มสุด ๆ เลยครับ", img: "503804955-122126012606831043-7044484449309087338-n.jpg" },
+      { user: "rosao16xx", text: "เล่นง่าย ได้เงินจริง", img: "490506081-122124348278773654-1591748651281217225-n.jpg" },
+      { user: "rosad41xx", text: "แตกจริง! ไม่ต้องลุ้นเลย เงินเข้าไวสุด ๆ 💸", img: "533961598_1465905681078900_8473607776528464666_n.jpg" },
+      { user: "rosad41xx", text: "จากหลักร้อยเป็นหลักหมื่นในคืนเดียว ว้าว!", img: "464195162_2477566235772141_6809220135929060331_n.jpg" },
+      { user: "rosab71xx", text: "รองรับ TrueWallet ด้วย สะดวกมาก", img: "504143319_2219977065123389_83092695142278008_n.jpg" },
+      { user: "rosat94xx", text: "แนะนำเพื่อน ได้โบนัสด้วย", img: "492242625_668943662417215_4482917277835435921_n.jpg" },
+      { user: "rosal68xx", text: "ดีตรงที่มีภาษาไทยครบถ้วน", img: "518366934_736143816025493_1299983234092703859_n.jpg" },
+      { user: "rosat28xx", text: "ฝากปุ๊บเงินเข้าปั๊บ", img: "533084719_1116500603710911_5818853113959217185_n.jpg" },
+      { user: "rosao71xx", text: "แทบจะถอนทุกวัน ดีจริงๆเว็บนี้!", img: "277169807-3163265690584017-8353788208641286173-n.jpg" },
+      { user: "rosaj88xx", text: "ชอบมีไลฟ์สดบอลให้ดูฟรี", img: "432694438-933306371801755-6605376483802637949-n.jpg" },
+      { user: "rosaq38xx", text: "ทีมซัพพอร์ตดูแลดีมาก", img: "444482004_7798764536813604_3664008989486408448_n.md.jpg" },
+      { user: "rosaz65xx", text: "อัตราต่อรองแฟร์สุด ๆ", img: "499992981-543532548818863-8863283426458467040-n.jpg" },
+      { user: "rosaf86xx", text: "ถอนวันละพันทุกวัน แทบไม่ต้องทำงาน", img: "503202164-2075152429640793-785701917046162087-n.jpg" },
+    ],
+    rwindex:0
     };
   },
   methods: {
@@ -257,7 +283,28 @@ export default {
     if (this.slides && this.slides.length > 0) {  // ตรวจสอบว่า slides ไม่เป็น undefined และมีค่า
       this.currentIndex = index;
     }
-  }
+  },
+  showCards() {
+      const rwcontainer = document.getElementById("rw-container");
+      rwcontainer.innerHTML = "";
+      for (let i = 0; i < 4; i++) {
+        const review = this.reviews[(this.rwindex + i) % this.reviews.length];
+        const card = document.createElement("div");
+        card.classList.add("rw-card");
+
+      card.innerHTML = `
+      <div class="rw-profile">
+        <img src="${require(`@/assets/${review.img}`)}" alt="${review.user}"/>
+        <b style="color:#FFD700">${review.user}</b>
+      </div>
+      <div class="rw-review-text">${review.text}</div>
+      <div class="rw-stars">★★★★★</div>
+    `;
+
+        rwcontainer.appendChild(card);
+      }
+      this.rwindex = (this.rwindex + 4) % this.reviews.length;
+    }
   },
   mounted() {
      this.topUsersData.forEach((user, index) => {
@@ -370,6 +417,10 @@ export default {
 
     initializeCards();
     setInterval(() => addCard(true), 5000);
+    
+    this.showCards();
+    setInterval(this.showCards, 6000);
+
   }
 };
 </script>
@@ -379,6 +430,61 @@ body {
   font-family: Arial, sans-serif;
   background-color: #111;
 }
+
+.rw-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      background-color: rgba(18,34,41,0.3);
+      width: 100%;
+      max-width: 800px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .rw-card {
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(18,34,41,1);
+      border-radius: 8px;
+      border: 0.5px solid #FFD700;
+      padding: 10px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: rw-slideUp 0.5s ease-out forwards;
+      box-shadow: 0 0 9px rgba(255, 215, 0, 0.6);
+    }
+
+    .rw-profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .rw-profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+      border: 2px solid #FFD700;
+    }
+
+    .rw-review-text {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .rw-stars {
+      color: #FFD700;
+      font-size: 16px;
+    }
+
+    @keyframes rw-slideUp {
+      0% { transform: translateY(-50%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
 
 .online-all {
   display: flex;
