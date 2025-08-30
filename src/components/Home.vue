@@ -146,12 +146,12 @@ export default {
         { src: 'certi.jpg', alt: 'Image 3' }
       ],
       topUsersData : [
-      { userName: "rosaa01xx", amount: "150,000", timestamp: "29/08/2023 14:30" },
-      { userName: "rosab89xx", amount: "130,500", timestamp: "29/08/2023 13:45" },
-      { userName: "rosae11xx", amount: "95,200", timestamp: "29/08/2023 12:50" },
-      { userName: "rosad04xx", amount: "83,000", timestamp: "29/08/2023 11:30" },
-      { userName: "rosae87xx", amount: "82,000", timestamp: "29/08/2023 10:10" },
-      { userName: "rosae35xx", amount: "78,000", timestamp: "29/08/2023 10:10" },
+      { userName: "rosaa01xx", amount: "150,000", timestamp: "31/08/2023" },
+      { userName: "rosab89xx", amount: "130,500", timestamp: "31/08/2023" },
+      { userName: "rosae11xx", amount: "95,200", timestamp: "31/08/2023" },
+      { userName: "rosad04xx", amount: "83,000", timestamp: "31/08/2023" },
+      { userName: "rosae87xx", amount: "82,000", timestamp: "31/08/2023" },
+      { userName: "rosae35xx", amount: "78,000", timestamp: "31/08/2023" },
     ]
     };
   },
