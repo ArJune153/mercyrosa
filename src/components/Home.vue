@@ -140,12 +140,12 @@ export default {
   data() {
     return {
       currentIndex: 0,
-      onlineCount1: "958",
-      onlineCount2: "2,348",
-      onlineCount3: "1,125",
-      onlineCount4: "893",
-      onlineCount5: "3,250",
-      onlineCount6: "1,112",
+      onlineCount1: "9,563",
+      onlineCount2: "23,123",
+      onlineCount3: "15,900",
+      onlineCount4: "18,351",
+      onlineCount5: "9874",
+      onlineCount6: "13,254",
       onlineCountAll: "189,631",
       slides: [
         { src: 'photo_6228624588875613744_y.jpg', alt: 'Image 1' },
@@ -629,7 +629,7 @@ body {
 
 /* สไตล์สำหรับรูป */
 .img-logo {
-  max-width: 100%;
+  max-width: 70%;
   filter: drop-shadow(0 0 10px rgba(255, 215, 0, 1));
 }
 
