@@ -140,7 +140,7 @@ export default {
   data() {
     return {
       currentIndex: 0,
-      onlineCount1: "9,563",
+      onlineCount1: "33,563",
       onlineCount2: "23,123",
       onlineCount3: "15,900",
       onlineCount4: "18,351",
