@@ -6,11 +6,11 @@
       <br><b class="text2">✨การันตีผู้ใช้งานจริงนับล้านยูสเซอร์ ลูกค้าใหม่ เพิ่มอัตราการชนะ ทันที !!</b>
     </div>
     <div class="button-container">
-    <a href="https://lin.ee/knMX628" class="custom-button1" onclick="trackSubscribe()">
+    <a href="https://lin.ee/knMX628" class="custom-button1">
         <i class="fas fa-user-plus"></i>  <!-- ไอคอนสมัครสมาชิก -->
         สมัครสมาชิก
     </a>
-    <a href="https://lin.ee/knMX628" class="custom-button2" onclick="trackSubscribe()">
+    <a href="https://lin.ee/knMX628" class="custom-button2">
         <i class="fas fa-comments"></i>  <!-- ไอคอนติดต่อแอดมิน -->
         ติดต่อแอดมิน
     </a>
@@ -185,9 +185,6 @@ export default {
     };
   },
   methods: {
-    trackSubscribe() {
-    fbq('track', 'Subscribe'); // ใช้เหตุการณ์ Subscribe เพื่อติดตามการสมัครสมาชิก
-   },
     createRankingCard(user, rank) {
         const rankingContainer = document.getElementById("rankingContainer");
 
