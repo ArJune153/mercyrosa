@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/mercy-favi.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- เพิ่มการโหลด Material Icons และ Font Awesome ด้วย async/defer -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-xxxxxxxxxxxxxxxx" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <title>MERCYROSA</title>
   <!-- Facebook Pixel Code -->
-  <script async src="https://connect.facebook.net/en_US/fbevents.js"></script>
   <script>
     !function(f,b,e,v,n,t,s) {
       if(f.fbq) return; n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -18,18 +16,16 @@
       s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)
     }(window, document,"script","https://connect.facebook.net/en_US/fbevents.js");
 
-    fbq('init', '887178389590165');
-    fbq('track', 'PageView');
+    fbq('init', '887178389590165'); // ใส่ Pixel ID ของคุณที่นี่
+    fbq('track', 'PageView'); // ติดตามการเข้าชมหน้าเว็บ
   </script>
   <!-- End Facebook Pixel Code -->
 </head>
 <body>
-  <div id="app"></div> <!-- ต้องมีการแสดงผลบางอย่างใน div นี้ -->
+  <div id="app"></div>
   <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=887178389590165&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- ตรวจสอบว่าแอปพลิเคชันหรือโค้ดที่ทำงานใน #app ถูกโหลดแล้ว -->
-  <!-- (กรณีใช้ React, Vue, หรือ JavaScript framework อื่น ๆ ต้องเพิ่มโค้ดที่เกี่ยวข้อง) -->
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=887178389590165&ev=PageView&noscript=1"/>
+    </noscript>
 </body>
 </html>
